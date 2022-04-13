@@ -1,0 +1,5 @@
+{
+  "load_extensions": {
+    "subplex_ml/extension": true
+  }
+}

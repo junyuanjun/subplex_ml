@@ -1,0 +1,60 @@
+{
+  "name": "subplex_ml",
+  "version": "0.1.0",
+  "description": "A Jupyter extension for subpopulation-level insepction of local model explanations",
+  "author": "junyuan",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NYU/subplex_ml.git"
+  },
+  "keywords": [
+    "jupyter",
+    "widgets",
+    "ipython",
+    "ipywidgets",
+    "jupyterlab-extension"
+  ],
+  "files": [
+    "lib/**/*.js",
+    "dist/*.js"
+  ],
+  "scripts": {
+    "clean": "rimraf dist/ && rimraf ../subplex_ml/labextension/ && rimraf ../subplex_ml/nbextension",
+    "prepublish": "yarn run clean && yarn run build:prod",
+    "build": "webpack --mode=development && yarn run build:labextension:dev",
+    "build:prod": "webpack --mode=production && yarn run build:labextension",
+    "build:labextension": "jupyter labextension build .",
+    "build:labextension:dev": "jupyter labextension build --development True .",
+    "watch": "webpack --watch --mode=development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@jupyterlab/builder": "^3.0.0",
+    "webpack": "^5",
+    "rimraf": "^2.6.1"
+  },
+  "dependencies": {
+    "@jupyter-widgets/base": "^1.1 || ^2 || ^3 || ^4",
+    "lodash": "^4.17.4",
+    "bootstrap-css-only": "^4.3.1",
+    "bootstrap-sass": "^3.4.1",
+    "d3": "^4.10.2",
+    "d3-drag": "^1.2.4",
+    "d3-lasso": "0.0.5",
+    "d3-selection": "^1.4.0",
+    "d3-webpack-loader": "^0.1.1",
+    "datatables": "^1.10.18",
+    "file-loader": "^4.2.0"
+  },
+  "jupyterlab": {
+    "extension": "lib/labplugin",
+    "outputDir": "../subplex_ml/labextension",
+    "sharedPackages": {
+      "@jupyter-widgets/base": {
+        "bundled": false,
+        "singleton": true
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+*.egg-info/
+.ipynb_checkpoints/
+dist/
+build/
+*.py[cod]
+node_modules/
+package-lock.json
+
+# Compiled javascript
+subplex_ml/nbextension/
+subplex_ml/labextension/
+
+# OS X
+.DS_Store
