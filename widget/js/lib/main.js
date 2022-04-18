@@ -43,7 +43,7 @@ var create = function(that) {
 	// intialize the html
 	that.el.setAttribute('class', 'd3-subplex');
 	that.el.innerHTML = `
-	<div class="row">
+	<div class="row" style="width:1000px">
 		<div class='col-sm-4'>
 			<div class="card">
 				<h3 class="card-header">SUBPLEX</h3>
@@ -352,7 +352,6 @@ var render_projection = function(that) {
 
 		// Reset the style of the not selected dots
 		lasso.notSelectedItems()
-		// .attr("r",3.5);
 	};
 
 	var lasso = d3.lasso()

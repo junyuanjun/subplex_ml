@@ -26,8 +26,6 @@ $ conda install -c conda-forge yarn
 conda create -n jupyterlab-ext --override-channels --strict-channel-priority -c conda-forge -c nodefaults jupyterlab=3 cookiecutter nodejs jupyter-packaging git
 ```
 
-
-
 You need to first install the required packages.
 
     $ pip install -r requirements.txt
